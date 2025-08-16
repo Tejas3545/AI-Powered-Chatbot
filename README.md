@@ -89,31 +89,31 @@ pytest
 ```
 🛣️ Project Roadmap
 
- Basic chatbot responses
+. Basic chatbot responses
 
- Flask web integration
+. Flask web integration
 
- SQLite conversation storage
+. SQLite conversation storage
 
- Improve NLP accuracy with ML models
+. Improve NLP accuracy with ML models
 
- Add authentication and multi-user support
+. Add authentication and multi-user support
 
- Deploy on cloud (Heroku/AWS)
+. Deploy on cloud (Heroku/AWS)
 
 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Fork the repo
+1. Fork the repo
 
-Create a new branch (feature-x)
+2. Create a new branch (feature-x)
 
-Commit changes (git commit -m 'Added feature x')
+3. Commit changes (git commit -m 'Added feature x')
 
-Push (git push origin feature-x)
+4. Push (git push origin feature-x)
 
-Open a Pull Request
+5. Open a Pull Request
 
 📜 License
 
@@ -122,14 +122,12 @@ See the LICENSE file for details.
 
 🙏 Acknowledgments
 
-Flask Documentation
-
-SQLite Tutorials
-
-OpenAI / NLP community resources
+. Flask Documentation
+. SQLite Tutorials
+. OpenAI / NLP community resources
 
 👨‍💻 Author
 
 Tejas
-📧 Email: [your email here]
+📧 Email: [solankitejas569@gmail.com]
 🔗 GitHub: Tejas3545
