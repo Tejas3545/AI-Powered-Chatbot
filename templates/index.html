@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card shadow-glow">
+      <!-- Header -->
+      <header class="header">
+        <div class="title">
+          <span class="logo">🤖</span>
+          <span class="name">AI Assistant</span>
+        </div>
+
+        <div class="actions">
+          <button class="action" onclick="clearChat()" title="Clear Chat" aria-label="Clear Chat">
+            <span class="icon">🗑</span>
+            <span class="label">Clear</span>
+          </button>
+          <button class="action" onclick="saveChat()" title="Save Chat" aria-label="Save Chat">
+            <span class="icon">💾</span>
+            <span class="label">Save</span>
+          </button>
+          <button class="action" onclick="exportChat()" title="Export Chat" aria-label="Export Chat">
+            <span class="icon">📤</span>
+            <span class="label">Export</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="divider"></div>
+
+      <!-- Chat Area -->
+      <main id="chat-box" class="chat"></main>
+
+      <!-- Input Bar -->
+      <footer class="composer">
+        <input
+          id="user-input"
+          type="text"
+          placeholder="Type your message..."
+          autocomplete="off"
+        />
+        <button class="send" onclick="sendMessage()" title="Send" aria-label="Send">➤</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

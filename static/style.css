@@ -1,0 +1,119 @@
+/* Theme */
+:root{
+  --bg1:#0f2027; --bg2:#203a43; --bg3:#2c5364;
+  --card:#0e0f11; --muted:#8ba3a7; --edge:#1f2b30;
+  --accent:#00ff99; --accent-soft:#00ffaa;
+  --bubble-user:#153f3a; --bubble-bot:#1a2226;
+  --text:#e8f1f2; --time:#9aa3a6;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 700px at 50% 20%, rgba(0,255,153,.06), transparent 70%),
+              linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+}
+
+/* Layout */
+.wrap{ min-height:100%; display:grid; place-items:center; padding:32px 16px; }
+.card{
+  width:min(92vw, 720px);
+  height:min(78vh, 640px);
+  background:var(--card);
+  border-radius:16px;
+  border:1px solid #0f191b;
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+.shadow-glow{ box-shadow:0 0 0 1px rgba(0,255,153,.15),
+                        0 10px 40px rgba(0,0,0,.55),
+                        0 0 30px rgba(0,255,153,.20); }
+
+/* Header */
+.header{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px 8px 16px; background:#0b0d0e; }
+.title{display:flex; align-items:center; gap:10px;}
+.logo{ font-size:20px }
+.name{ font-weight:700; letter-spacing:.2px }
+.actions{ display:flex; gap:16px; }
+.action{
+  background:transparent; border:none; color:var(--muted);
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+  cursor:pointer; padding:4px 6px; border-radius:10px;
+  transition:transform .15s ease, color .15s ease, background .15s ease;
+}
+.action .icon{ font-size:18px; line-height:1 }
+.action .label{ font-size:10.5px; color:#8aa3a6 }
+.action:hover{ transform:translateY(-1px) scale(1.05); color:var(--accent-soft); background:#0f1517; }
+
+.divider{ height:1px; background:linear-gradient(90deg, transparent, #0e1e20, transparent) }
+
+/* Chat area */
+.chat{
+  flex:1; overflow-y:auto; padding:14px 16px 18px 16px;
+  display:flex; flex-direction:column; gap:12px;
+  background:
+    radial-gradient(800px 400px at 80% -20%, rgba(0,255,153,.05), transparent 60%),
+    radial-gradient(800px 400px at 0% 120%, rgba(0,255,153,.04), transparent 60%);
+  scrollbar-width:thin;
+}
+.chat::-webkit-scrollbar{ width:8px }
+.chat::-webkit-scrollbar-thumb{ background:#20363a; border-radius:8px }
+
+/* Bubbles */
+.msg{ 
+  max-width:78%; padding:10px 12px; border-radius:14px;
+  font-size:14.5px; line-height:1.35; position:relative;
+  word-wrap:break-word; white-space:pre-wrap;
+}
+.msg.user{
+  align-self:flex-end; background:var(--bubble-user);
+  border:1px solid #25524b; box-shadow:inset 0 0 0 1px #0f1919;
+}
+.msg.bot{
+  align-self:flex-start; background:var(--bubble-bot);
+  border:1px solid var(--edge); box-shadow:inset 0 0 0 1px #11181b;
+}
+
+/* Timestamp */
+.time{
+  position:absolute; right:10px; bottom:-16px;
+  font-size:10.5px; color:var(--time); opacity:.85;
+}
+
+/* Typing */
+.typing::after{
+  content:"";
+  display:inline-block; width:16px; height:10px; margin-left:6px;
+  background:
+    radial-gradient(currentColor 2px, transparent 3px) 0 50%/4px 4px,
+    radial-gradient(currentColor 2px, transparent 3px) 6px 50%/4px 4px,
+    radial-gradient(currentColor 2px, transparent 3px) 12px 50%/4px 4px;
+  color:#7fd6b7;
+  animation: blink 1s infinite;
+}
+@keyframes blink{ 0%,100%{opacity:.2} 50%{opacity:1} }
+
+/* Composer */
+.composer{ display:flex; gap:10px; padding:12px; border-top:1px solid var(--edge); background:#0b0d0e; }
+.composer input{
+  flex:1; height:42px; border:none; outline:none; color:var(--text);
+  background:#0f1517; border-radius:12px; padding:0 14px;
+  box-shadow: inset 0 0 0 1px #1b2a2f;
+}
+.composer input::placeholder{ color:#6f8588 }
+.send{
+  min-width:46px; height:42px; border:none; cursor:pointer; border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-soft));
+  color:#07251c; font-weight:700; font-size:18px;
+  box-shadow:0 8px 20px rgba(0,255,153,.25); transition:transform .08s ease, filter .15s ease;
+}
+.send:hover{ filter:saturate(110%) brightness(1.03) }
+.send:active{ transform:scale(.97) }
+
+/* Small screens */
+@media (max-width:520px){
+  .action .label{ display:block }
+  .card{ height:85vh }
+}
