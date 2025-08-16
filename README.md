@@ -123,7 +123,9 @@ See the LICENSE file for details.
 🙏 Acknowledgments
 
 . Flask Documentation
+
 . SQLite Tutorials
+
 . OpenAI / NLP community resources
 
 👨‍💻 Author
